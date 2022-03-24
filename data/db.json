@@ -1,0 +1,64 @@
+{
+    "scammerLists": [
+    {
+      "id": 1,
+      "shopName": "AthitiITShop",
+      "firstName": "Athiti",
+      "lastName": "Kongsobsin",
+      "bank": "SCB",
+      "bankId": "2392666831",
+      "count": 88,
+      "isActive": false,
+      "img": "images/AthitiITShop.jpg",
+      "description": "โดนนายคนนี้โกงค่ะ โอนเงินซื้อมือถือแล้วไม่ส่งของให้ แจ้งความแล้วคดีก็ไม่คืบหน้า ตำรวจบอกว่าไม่สามารถทำอะไรนางได้ มีคนโดนเยอะมากค่ะ #โดนโกงเงิน #ขายไอโฟน #อธิติบางมด"
+    },
+    {
+      "id": 2,
+      "shopName": "SprewBakery",
+      "firstName": "Supicha",
+      "lastName": "Piriyasiriphan",
+      "bank": "SCB",
+      "bankId": "23926645555",
+      "count": 15,
+      "isActive": false,
+      "img": "images/SprewBakery.jpg",
+      "description": "ร้านขายขนมปังออนไลน์ผ่านทวิตเตอร์ บัญชี @SprewBakery มีประวัติการโกงในด้อมอนิเมะมาก่อนที่จะเข้าวงการขายขนมออนไลน์ เปิดบัญชีได้สองอาทิตย์ ก็มีผู้เสียหายมากกว่า 10 คน"
+    },
+    {
+      "id": 3,
+      "shopName": "KhobfhaGameShop",
+      "firstName": "Sarin",
+      "lastName": "Weerakun",
+      "bank": "SCB",
+      "bankId": "23349008787",
+      "count": 8,
+      "isActive": false,
+      "img": "images/KhobfhaGameShop.jpg",
+      "description": "ร้านขายเกมที่บอกว่ารอพรีออเดอร์สินค้า 2 อาทิตย์ แต่รอยัน 2 ปีแล้วยังไม่ได้เลยครับ คดีก็หมดอายุความแล้ว เพราะฉะนั้นผมเลยอยากมาแชร์ประสบการณ์ส่วนตัวที่เจอ เพื่อเตือนภัยทุก ๆ คนครับ"
+    },
+    {
+      "id": 4,
+      "shopName": "JubbyShabu",
+      "firstName": "Udomchai",
+      "lastName": "Nirasrop",
+      "bank": "Kbank",
+      "bankId": "05136362234",
+      "count": 5,
+      "isActive": false,
+      "img": "images/JubbyShabu.jpg",
+      "description": "ชาบูร้านนี้บอกจะแถมหม้อต้มชาบู แต่ดันให้เป็นหม้อของเล่นมาครับ หลอกเรื่องนั้นไม่เท่าไหร่ ผมสั่ง set shabu big 5 set ก็เอามาให้แค่ set เดียวแล้วเอาเงินหนีไปไม่รับผิดชอบอะไรเลยครับ"
+    },
+    {
+      "id": 5,
+      "shopName": "FahhCosmetics",
+      "firstName": "Hataiwan",
+      "lastName": "Mekvee",
+      "bank": "SCB",
+      "bankId": "10010110009",
+      "count": 10,
+      "isActive": false,
+      "img": "images/FahhCosmetics.jpg",
+      "description": "เครื่องสำอางปลอม แต่ดันบอกขายของจริง งงมาก ๆ ค่ะ ติดตามข่าวจากทวิตเตอร์ #FahhCosmeticsโกง ได้นะคะ"
+    }
+  ]
+}
