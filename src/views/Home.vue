@@ -1,6 +1,5 @@
 <script setup>
 import { onBeforeMount,  ref, computed, reactive } from 'vue';
-import NavBar from '../components/NavBar.vue'
 import ScammerLists from '../components/ScammerLists.vue'
 import Login from '../components/Login.vue'
 import Search from '../components/SearchList.vue'
@@ -8,7 +7,7 @@ import AddPopup from '../components/AddPopup.vue';
 
 let filterButton = ref(false)
 const scammerLists = ref([])
-
+const userLists = ref([])
 
 
 let menu = ref([1, 0, 0, 0])
@@ -80,6 +79,22 @@ const addNewScammer = async(newScammer) => {
     }else console.log("cannot add new scammer")
 }
 
+// const getScammers = async () => {
+//     const res = await fetch('http://localhost:3001/scammerLists')
+//     if (res.status === 200) {
+//         scammerLists.value = await res.json()
+//         console.log(scammerLists.value)
+//     } else console.log("error, can't get data")
+// }
+const loginFunc = async(user) => {
+    const res = await fetch('http://localhost:3001/users')
+    if(res.status === 200){
+        userLists.value = await res.json()
+        for(let i;i<userLists.length;i++){
+              //หา array func มาเช็ค user in userList  
+        }
+    }
+}
 </script>
 
 <template>
@@ -101,7 +116,7 @@ const addNewScammer = async(newScammer) => {
         <!-- <Search :keywords="keyword" /> -->
         <ScammerLists :scammerLists="scammerLists" />
         <!-- Login -->
-        <Login></Login>
+        <Login/>
         <!--add Form-->
         <div class="modal">
             <div class="modal-box">
