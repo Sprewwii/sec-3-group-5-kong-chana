@@ -8,26 +8,12 @@ const props = defineProps({
         type: Array,
         default: []
     }
-    // keywords: {
-    //     type: String,
-    //     default: ''
-    // }
 })
 
 // const highlight = 'block py-2 pr-4 pl-3 text-white bg-red-500 rounded md:bg-transparent md:p-0 md:text-red-500 text-lg font-black'
 // const unHighlight = 'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 text-lg'
 // const iconPlus = 'M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z'
 // const iconCheck = 'M5 13l4 4L19 7'
-
-
-// const keyword = computed(() => props.keywords)
-
-// ต้องแก้
-// const filterScammer = computed(() => props.scammerLists.filter((scammer) => 
-//     scammer.shopName.toLowerCase().includes(keyword.value.toLowerCase())
-//     || scammer.firstName.toLowerCase().includes(keyword.value.toLowerCase())
-//     || scammer.lastName.toLowerCase().includes(keyword.value.toLowerCase())
-//     || scammer.bankId.toLowerCase().includes(keyword.value.toLowerCase())))
 
 </script>
 

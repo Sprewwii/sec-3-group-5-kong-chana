@@ -1,11 +1,12 @@
 <script setup>
-import { onBeforeMount,  ref, computed, reactive } from 'vue';
+import { onBeforeMount, ref, computed, reactive } from 'vue';
 import NavBar from '../components/NavBar.vue'
 import ScammerLists from '../components/ScammerLists.vue'
 import Login from '../components/Login.vue'
 import Search from '../components/SearchList.vue'
+import router from '../router';
 
-let filterButton = ref(false)
+// let filterButton = ref(false)
 const scammerLists = ref([])
 
 
@@ -20,6 +21,8 @@ const unHighlight = 'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100
 const iconPlus = 'M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z'
 const iconCheck = 'M5 13l4 4L19 7'
 
+
+
 //GET
 const getScammers = async () => {
     const res = await fetch('http://localhost:3001/scammerLists')
@@ -32,6 +35,8 @@ const getScammers = async () => {
 onBeforeMount(async () => {
     await getScammers()
 })
+
+
 
 // const showFilter = () => {
 //     filterButton.value = !filterButton.value
@@ -67,6 +72,7 @@ onBeforeMount(async () => {
 // alert('กรุณาเข้าสู่ระบบ เพื่อใช้ระบบเพิ่มรายชื่อผู้โกงและระบบฉันก็โดนโกง')
 
 
+
 </script>
 
 <template>
@@ -87,8 +93,10 @@ onBeforeMount(async () => {
         </div>
         <!-- <Search :keywords="keyword" /> -->
         <ScammerLists :scammerLists="scammerLists" />
+
         <!-- Login -->
         <Login></Login>
+
         <!--add Form-->
         <div id="add-form" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
@@ -98,7 +106,7 @@ onBeforeMount(async () => {
                         <h3 class="text-3xl font-black text-gray-900">เพิ่มรายชื่อผู้โกง</h3>
                         <button type="button"
                             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-                            data-modal-toggle="add-form" @click="menu = [1, 0, 0, 0]">
+                            data-modal-toggle="add-form">
                             <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
