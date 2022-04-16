@@ -113,6 +113,17 @@ const register = async(newUser) => {
         console.log("register success")
     }else console.log("Error, can't register")
 }
+
+const deleteAccount = async (deleteUserUsername) => {
+  const res = await fetch(`http://localhost:3001/users/${deleteUserUsername}`, {
+    method: 'DELETE'
+  })
+  if (res.status === 200) {
+    userLists.value = userLists.value.filter((user) => user.username !== deleteUserUsername)
+    console.log('deleted successfullly')
+  } else console.log('error, cannot delete')
+}
+
 </script>
 
 <template>
