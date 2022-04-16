@@ -1,5 +1,5 @@
 {
-    "scammerLists": [
+  "scammerLists": [
     {
       "id": 1,
       "shopName": "AthitiITShop",
@@ -61,7 +61,7 @@
       "description": "เครื่องสำอางปลอม แต่ดันบอกขายของจริง งงมาก ๆ ค่ะ ติดตามข่าวจากทวิตเตอร์ #FahhCosmeticsโกง ได้นะคะ"
     }
   ],
-    "users":[
+  "users": [
     {
       "username": "jamies",
       "password": "0985769668"
@@ -82,43 +82,42 @@
       "username": "fahsodsai",
       "password": "hataiwan888"
     }
-    ],
-    "aboutUs":[
-      
-      {
-        "id":63130500115,
-        "name": "สาริน วีรกุล",
-        "aka": "sSilence",
-        "description": "ผมชื่อสาริน วีรกุล ทำหน้าที่ช่วยเขียนและปรับปรุง code ในทุก ๆ ส่วน ตัวอย่างเช่น components, router, views เป็นต้นครับ",
-        "imgPath": "images/aboutUs/kobfha.jpeg"
-      },
-      {
-        "id": 63130500124,
-        "name": "สุพิชา พิริยะศิริพันธ์",
-        "aka": "sprewwii",
-        "description": "ทำหน้าที่ออกแบบตัวหน้าเว็บไซต์ จัดการเกี่ยวกับ UX UI component ร่วมกับเพื่อน ๆ ในกลุ่มค่ะ",
-        "imgPath": "images/aboutUs/prew.jpeg"
-      },
-      {
-        "id": 63130500128,
-        "name": "อธิติ คงสบสิน",
-        "aka": "7435ヅ",
-        "description": "หนูชื่ออธิติ คงสบสิน ทำหน้าที่เป็นกำลังใจให้เพื่อนๆ โดยจะมีนางสาวสุพิชาเป็นผู้คุมในการทำงานในครั้งนี้",
-        "imgPath": "images/aboutUs/jame.jpeg"
-      },
-      {
-        "id": 63130500160,
-        "name":"หทัยวรรณ เมฆวี",
-        "aka": "Fahsodsai",
-        "description": "หนูชื่อหทัยวรรณ เมฆวี ทำหน้าที่ช่วยฝ่าย UI ของเว็บและช่วยเสริมค่ะ",
-        "imgPath": "images/aboutUs/fah.jpeg"
-      },
-      {
-        "id": 63130500161,
-        "name":"อุดมชัย นิอิราศรพ",
-        "aka": "jubby",
-        "description": "ทำหน้าที่เขียนcodeโดยรวม และ แก้ไขcode เพิ่มfunctionต่างๆ",
-        "imgPath": "images/aboutUs/jub.jpeg"
-      }
-    ]
+  ],
+  "aboutUs": [
+    {
+      "id": 63130500115,
+      "name": "สาริน วีรกุล",
+      "aka": "sSilence",
+      "description": "ผมชื่อสาริน วีรกุล ทำหน้าที่ช่วยเขียนและปรับปรุง code ในทุก ๆ ส่วน ตัวอย่างเช่น components, router, views เป็นต้นครับ",
+      "imgPath": "images/aboutUs/kobfha.jpeg"
+    },
+    {
+      "id": 63130500124,
+      "name": "สุพิชา พิริยะศิริพันธ์",
+      "aka": "sprewwii",
+      "description": "ทำหน้าที่ออกแบบตัวหน้าเว็บไซต์ จัดการเกี่ยวกับ UX UI component ร่วมกับเพื่อน ๆ ในกลุ่มค่ะ",
+      "imgPath": "images/aboutUs/prew.jpeg"
+    },
+    {
+      "id": 63130500128,
+      "name": "อธิติ คงสบสิน",
+      "aka": "7435ヅ",
+      "description": "หนูชื่ออธิติ คงสบสิน ทำหน้าที่เป็นกำลังใจให้เพื่อนๆ โดยจะมีนางสาวสุพิชาเป็นผู้คุมในการทำงานในครั้งนี้",
+      "imgPath": "images/aboutUs/jame.jpeg"
+    },
+    {
+      "id": 63130500160,
+      "name": "หทัยวรรณ เมฆวี",
+      "aka": "Fahsodsai",
+      "description": "หนูชื่อหทัยวรรณ เมฆวี ทำหน้าที่ช่วยฝ่าย UI ของเว็บและช่วยเสริมค่ะ",
+      "imgPath": "images/aboutUs/fah.jpeg"
+    },
+    {
+      "id": 63130500161,
+      "name": "อุดมชัย นิอิราศรพ",
+      "aka": "jubby",
+      "description": "ทำหน้าที่เขียนcodeโดยรวม และ แก้ไขcode เพิ่มfunctionต่างๆ",
+      "imgPath": "images/aboutUs/jub.jpeg"
+    }
+  ]
 }

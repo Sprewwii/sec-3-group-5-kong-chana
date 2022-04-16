@@ -1,5 +1,5 @@
 <script setup>
-import Login from './Login.vue'
+
 </script>
 
 <template>
@@ -22,7 +22,10 @@ import Login from './Login.vue'
                 <router-link :to="{name: 'Search'}" >ค้นหา</router-link>
             </li>
             <li>
-                <button type="button" :disabled="login ? false:true"  data-modal-toggle="add-form" @click="menuIsActive(2); keywords = ''">เพิ่มรายชื่อผู้โกง</button>
+                <!-- <router-link :to="{name: 'AddPopup'}">เพิ่มรายชื่อผู้โกง</router-link> -->
+                <!-- <button type="button" :disabled="login ? false:true"  data-modal-toggle="add-form" @click="menuIsActive(2); keywords = ''">เพิ่มรายชื่อผู้โกง</button>
+                 -->
+                 <button type="button" v-show="!showAddedPopup" data-modal-toggle="my-modal" @click="menuIsActive(2); keywords = ''">เพิ่มรายชื่อผู้โกง</button>
             </li>
             <li>
                 <router-link :to="{ name: 'AboutUs' }">เกี่ยวกับเรา</router-link>
