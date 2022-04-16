@@ -79,13 +79,6 @@ const addNewScammer = async(newScammer) => {
     }else console.log("cannot add new scammer")
 }
 
-// const getScammers = async () => {
-//     const res = await fetch('http://localhost:3001/scammerLists')
-//     if (res.status === 200) {
-//         scammerLists.value = await res.json()
-//         console.log(scammerLists.value)
-//     } else console.log("error, can't get data")
-// }
 const loginFunc = async(user) => {
     const res = await fetch('http://localhost:3001/users')
     if(res.status === 200){
