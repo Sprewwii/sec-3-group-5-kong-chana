@@ -100,6 +100,29 @@ const filterScammer = computed(() => scammerLists.value.filter((scammer) =>
     || scammer.lastName.toLowerCase().includes(keyword.value.toLowerCase())
     || scammer.bankId.toLowerCase().includes(keyword.value.toLowerCase())))
 
+const register = async(newUser) => {
+    const res = await fetch("http://localhost:3001/users",{
+        method:'POST',
+        headers: {'content-type':'application/json'},
+        body: JSON.stringify(newUser)
+    })
+    if(res.status === 201){
+        const addedUser = await res.json()
+        scammerLists.value.push(addedUser)
+        console.log("register success")
+    }else console.log("Error, can't register")
+}
+
+const deleteAccount = async (deleteUserUsername) => {
+  const res = await fetch(`http://localhost:3001/users/${deleteUserUsername}`, {
+    method: 'DELETE'
+  })
+  if (res.status === 200) {
+    userLists.value = userLists.value.filter((user) => user.username !== deleteUserUsername)
+    console.log('deleted successfullly')
+  } else console.log('error, cannot delete')
+}
+
 </script>
 
 <template>
