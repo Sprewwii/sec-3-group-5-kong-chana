@@ -1,19 +1,29 @@
 <script setup>
 // import { computed } from "@vue/runtime-core"
-const iconPlus = 'M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z'
-const iconCheck = 'M5 13l4 4L19 7'
+import { computed, ref } from "@vue/runtime-core"
+import People from "./icons/PeopleIcon.vue"
+import Fire from "./icons/FireIcon.vue"
+import Add from "./icons/AddIcon.vue"
+import Check from "./icons/CheckIcon.vue"
+
 
 const props = defineProps({
     scammerLists : {
         type: Array,
         default: []
-    }
+    },
+
 })
 
 // const highlight = 'block py-2 pr-4 pl-3 text-white bg-red-500 rounded md:bg-transparent md:p-0 md:text-red-500 text-lg font-black'
 // const unHighlight = 'block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 text-lg'
 // const iconPlus = 'M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z'
 // const iconCheck = 'M5 13l4 4L19 7'
+
+// console.log('ควย' + scammers)
+
+
+
 
 </script>
 
@@ -40,6 +50,7 @@ const props = defineProps({
                             </a>
                         </div>
                         <img :src="scammer.img" alt="shop" class="relative rounded-t-lg w-full" />
+                        <span class="absolute z-20 top-2 right-2 inline-flex items-center justify-center px-2 py-1 leading-none transform translate-x-1/2 -translate-y-1/2" id="fire" v-if="scammer.count >= 100"><Fire/></span>
                     </div>
 
                     <div class="card-body ml-10 mr-10 mt-5">
@@ -51,19 +62,11 @@ const props = defineProps({
                             <button id="btnGotScam" :disabled="!login ? true : (scammer.isActive ? true : false)"
                                 @click="scammer.isActive = true; ++scammer.count; plusAcheck();"
                                 :class="!login ? 'bg-gray-400 hover:bg-gray-500 text-white py-2 px-4 border-b-4 border-gray-500 hover:border-gray-500 rounded flex' : scammer.isActive ? 'bg-green-400 hover:bg-green-500 text-white py-2 px-4 border-b-4 border-green-500 hover:border-green-500 rounded flex' : 'bg-red-400 hover:bg-red-500 text-white py-2 px-4 border-b-4 border-red-500 hover:border-red-500 rounded flex'">
-                                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        :d="scammer.isActive ? iconCheck : iconPlus"></path>
-                                </svg>
+                                <Add v-if="scammer.isActive==false" class="mr-1"/>
+                                <Check v-else class="mr-1"/>
                                 ฉันก็โดนโกง</button>
                             <p class="flex ml-2">
-                                <svg class="w-6 h-6 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z">
-                                    </path>
-                                </svg>
+                                <People/>
                                 {{ scammer.count }}
                             </p>
                         </div>

@@ -1,25 +1,19 @@
 <script setup>
+import { ref } from 'vue'
+defineEmits(['doLogin'])
+
+const username = ref('')
+const password = ref('')
 
 </script>
- 
+
 <template>
 <div>
-        <div id="popup-modal" aria-hidden="true"
-            class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center md:inset-0">
-            <form class="bg-white shadow-md rounded-2xl px-6 pt-6 pb-8 w-1/2">
+        <div class="overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 flex justify-center items-center md:inset-0">
+            <form class="bg-white rounded-2xl px-6 pt-6 pb-8 w-1/2">
                 <div class="pt-3.5">
                     <div class="flex">
                         <h3 class="flex text-3xl font-black text-gray-900">เข้าสู่ระบบ</h3>
-                        <button type="button"
-                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
-                            data-modal-toggle="popup-modal" @click="menu = [1, 0, 0, 0]">
-                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
                     </div>
                     <p class="text-base font-medium text-gray-500">ยินดีต้อนรับสู่เว็ปไซต์โกงชนะ</p>
                 </div>
@@ -49,7 +43,7 @@
                     <button
                         class="w-full text-white bg-red-400 hover:bg-red-800 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                         type="button" data-modal-toggle="popup-modal"
-                        @click="login = true; username.value = ''; password.value = ''; menu = [1, 0, 0, 0];">
+                        @click="$emit('doLogin',{username: username, password: password});login = true; username.value = ''; password.value = ''">
                         เข้าสู่ระบบ
                     </button>
                 </div>
@@ -57,7 +51,7 @@
         </div>
 </div>
 </template>
- 
+
 <style>
 
 </style>

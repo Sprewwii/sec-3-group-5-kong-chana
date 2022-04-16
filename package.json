@@ -9,8 +9,7 @@
     "backend": "npx json-server --watch ./data/db.json --port 3001"
   },
   "dependencies": {
-    "daisyui": "^2.0.9",
-    "flowbite": "^1.4.1",
+    "flowbite": "^1.4.2",
     "json-server": "^0.17.0",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14"

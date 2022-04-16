@@ -6,7 +6,7 @@
  </script>
 
   <template>
-  <div>
+  <!-- <div>
 <div class="bg-white shadow-md rounded-2xl px-6 pt-6 pb-8 mb-4 w-1/2">
  <div class="pt-3.5">
  <div class="flex">
@@ -54,9 +54,13 @@
                 </div>
 
                 <div class="pt-3.5">
-                    <button
+                   <button
                         class="w-full text-white bg-red-400 hover:bg-red-800 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-                        type="button" data-modal-toggle="add-form"
+                        type="button" data-modal-toggle="add-form" for="my-modal"
+                        @click="$emit('createNewScammer',newScammer)"> -->
+                        <!-- <button
+                        class="w-full text-white bg-red-400 hover:bg-red-800 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                        type="button" for="my-modal"
                         @click="$emit('createNewScammer',newScammer)">
                         เพิ่มรายชื่อผู้โกง
                     </button>
@@ -64,7 +68,7 @@
 </div>
 </div>
 </div>
-</div>
+</div> -->
 
   <!-- <div id="add-form" aria-hidden="true"
             class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0">
@@ -138,6 +142,26 @@
             </form>
             </div> -->
         
+
+
+
+
+
+            <div>
+        <div class="flex flex-col justify-center items-center">
+                    <div>
+                        <h3 class="font-bold text-lg">เพิ่มรายชื่อผู้โกง</h3>
+                    </div>
+                    ชื่อ: <input type="text" class="mt-4" v-model="newScammer.firstName" /> <br>
+                    นามสกุล: <input type="text" class="mt-4" v-model="newScammer.LastName" /> <br>
+                    ชื่อร้าน: <input type="text" class="mt-4" v-model="newScammer.shopName" /> <br>
+                    ธนาคาร: <input type="text" class="mt-4" v-model="newScammer.bank" /> <br>
+                    เลขบัญชี: <input type="text" class="mt-4" v-model="newScammer.bankId" /> <br>
+                    คำอธิบายเพิ่มเติม: <input type="text" class="mt-4" v-model="newScammer.description" /> <br>
+                    <button @click="$emit('createNewScammer', newScammer)" class="btn btn-primary"
+                        for="my-modal">CREATE</button>
+                </div>
+            </div>
 </template>
   
  <style>
