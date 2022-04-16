@@ -100,6 +100,19 @@ const loginFunc = async(user) => {
         return false
     }else console.log("error, can't get data")
 }
+
+const register = async(newUser) => {
+    const res = await fetch("http://localhost:3001/users",{
+        method:'POST',
+        headers: {'content-type':'application/json'},
+        body: JSON.stringify(newUser)
+    })
+    if(res.status === 201){
+        const addedUser = await res.json()
+        scammerLists.value.push(addedUser)
+        console.log("register success")
+    }else console.log("Error, can't register")
+}
 </script>
 
 <template>
