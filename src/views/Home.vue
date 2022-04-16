@@ -90,10 +90,16 @@ const loginFunc = async(user) => {
     const res = await fetch('http://localhost:3001/users')
     if(res.status === 200){
         userLists.value = await res.json()
-        for(let i;i<userLists.length;i++){
-              //หา array func มาเช็ค user in userList  
-        }
-    }
+        if(userLists.some(e => e.username === user.username)){
+            if(user.password === e.password){
+                return true
+            }else
+            console.log("wrong password") 
+            return false
+        }else
+        console.log("User not found")
+        return false
+    }else console.log("error, can't get data")
 }
 </script>
 
