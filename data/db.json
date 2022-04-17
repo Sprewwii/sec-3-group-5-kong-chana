@@ -59,18 +59,6 @@
       "img": "images/FahhCosmetics.jpg",
       "description": "เครื่องสำอางปลอม แต่ดันบอกขายของจริง งงมาก ๆ ค่ะ ติดตามข่าวจากทวิตเตอร์ #FahhCosmeticsโกง ได้นะคะ",
       "id": 5
-    },
-    {
-      "shopName": "qweqweqwe123123123123",
-      "firstName": "asdasd123",
-      "lastName": "qweqweqwe2323",
-      "bank": "Kbank",
-      "bankId": 1.2313213123123122e+22,
-      "count": 1,
-      "isActive": true,
-      "img": "images/DefaultShopImage.jpg",
-      "description": "213123123qweqweqwe",
-      "id": 6
     }
   ],
   "aboutUs": [
