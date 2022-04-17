@@ -1,31 +1,19 @@
 <script setup >
 import { onBeforeMount, ref, computed, reactive } from "vue";
-import ScammerLists from "../components/ScammerLists.vue";
-import Login from "../components/BaseLogin.vue";
-import AddPopup from "../components/AddPopup.vue";
+import ScammerLists from "../components/BaseScammerLists.vue";
+// import AddScammer from "../components/BaseAddScammer.vue";
 import search from "../components/icons/SearchIcon.vue";
 import NotFound from "../components/icons/NotFound.vue";
 import { useRouter } from "vue-router";
 
-const appRouter = useRouter();
+const appRouter = useRouter()
+const goBack = () => appRouter.go(-1)
 
 // let filterButton = ref(false)
 const scammerLists = ref([]);
 
-let menu = ref([1, 0, 0, 0]);
-const login = ref(false);
-const username = ref("");
-const password = ref("");
-
-const highlight =
-    "block py-2 pr-4 pl-3 text-white bg-red-500 rounded md:bg-transparent md:p-0 md:text-red-500 text-lg font-black";
-const unHighlight =
-    "block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0 text-lg";
-const iconPlus = "M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z";
-const iconCheck = "M5 13l4 4L19 7";
-
 const showAddedPopup = ref(false);
-const keyword = ref('')
+const keyword = ref('');
 
 //GET
 const getScammers = async () => {
@@ -41,74 +29,92 @@ onBeforeMount(async () => {
     await getScammers();
 });
 
-function sortScammers(scammerLists) {
-    // เรืยงจากมากไปน้อย
-    return scammerLists.sort((a, b) => b.count - a.count);
-}
-
-// const showFilter = () => {
-//     filterButton.value = !filterButton.value
-//     if (filterButton.value === false) {
-//         keywords.value = ''
-//     }
-// }
-
-// const menuIsActive = (index) => {
-//     menu.value = [0, 0, 0, 0]
-//     menu.value[index] = 1
-//     if (filterButton.value === true) {
-//         filterButton.value = false
-//     }
-// }
-
-// แก้
-// const addScammer = (inPutShopName, inPutFirstName, inPutLastName, inPutBank, inPutBankId, inPutDescription) => {
-//     scammerLists.push({
-//         id: scammerLists[scammerLists.length - 1].id++,
-//         shopName: inPutShopName,
-//         firstName: inPutFirstName,
-//         lastName: inPutLastName,
-//         bank: inPutBank,
-//         bankId: inPutBankId,
-//         count: 1,
-//         isActive: true,
-//         img: "images/DefaultShopImage.jpg",
-//         description: inPutDescription
-//     })
-// }
-
-// alert('กรุณาเข้าสู่ระบบ เพื่อใช้ระบบเพิ่มรายชื่อผู้โกงและระบบฉันก็โดนโกง')
-const addNewScammer = async (newScammer) => {
-    const res = await fetch("http://localhost:3001/scammerLists", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(newScammer),
-    });
-    if (res.status === 201) {
-        const addedScammer = await res.json();
-        console.log(addedScammer);
-        scammerLists.value.push(addedScammer);
-        console.log("create success");
-    } else console.log("cannot add new scammer");
-};
-
-
-
 const filterScammer = computed(() => scammerLists.value.filter((scammer) =>
     scammer.shopName.toLowerCase().includes(keyword.value.toLowerCase())
     || scammer.firstName.toLowerCase().includes(keyword.value.toLowerCase())
     || scammer.lastName.toLowerCase().includes(keyword.value.toLowerCase())
     || scammer.bankId.toLowerCase().includes(keyword.value.toLowerCase())))
 
+
+function sortScammers(scammerLists) {
+    // เรืยงจากมากไปน้อย
+    return scammerLists.sort((a, b) => b.count - a.count);
+}
+
+const removeScammer = async (deleteScammerId) => {
+    const confirmDelete = ref(false)
+    confirmDelete.value = confirm(`Do you want to delete this scammer`)
+    console.log(confirmDelete)
+    if (confirmDelete.value == true) {
+        const res = await fetch(`http://localhost:3001/scammerLists/${deleteScammerId}`, { method: 'DELETE' })
+        if (res.status === 200) {
+            scammerLists.value = scammerLists.value.filter((scammerSelected) => scammerSelected.id !== deleteScammerId)
+            console.log("delete success")
+        } else console.log("can't delete data")
+    } else console.log("YOU CANCEL")
+}
+
+function openModal(modalId) {
+    modal = document.getElementById(modalId)
+    modal.classList.remove('hidden')
+}
+
+function closeModal() {
+    modal = document.getElementById('modal')
+    modal.classList.add('hidden')
+}
+
+//Edit
+const editInfo = async (scamm) => {
+    console.log(scamm.id)
+    const res = await fetch(`http://localhost:3001/scammerLists/${scamm.id}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            shopName: scamm.shopName,
+            firstName: scamm.firstName,
+            lastName: scamm.lastName,
+            bank: scamm.bank,
+            bankId: scamm.bankId,
+            count: scamm.count,
+            isActive: scamm.isActive,
+            img: scamm.img,
+            description: scamm.description
+        })
+    })
+    if (res.status === 200) {
+        const editedScammer = await res.json()
+        scammerLists.value = scammerLists.value.map((scammer) => 
+        scammer.id === editedScammer.id ? {
+            ...scammer, 
+            shopName: scamm.shopName,
+            firstName: scamm.firstName,
+            lastName: scamm.lastName,
+            bank: scamm.bank,
+            bankId: scamm.bankId,
+            count: scamm.count,
+            isActive: scamm.isActive,
+            img: scamm.img,
+            description: scamm.description
+            } : scammer    
+        )
+        console.log("edited successfully")
+        alert('Edited succesfully')
+    } else console.log("error, can't edit")
+}
+
+
 </script>
 
 <template>
     <div>
         <!-- BANNER -->
-        <img src="/images/Banner.jpg" class="w-full">
+        <img src="../Asset/Banner.jpg" class="w-full">
 
         <!-- SEARCH BAR -->
-        <div class="form-control mt-7">
+        <div class="form-control mt-10">
             <div class="input-group flex justify-center items-center">
                 <search />
                 <input type="text" v-model="keyword" placeholder="ค้นหาด้วยชื่อจริง นามสกุล ชื่อร้าน หรือเลขบัญชีผู้โกง"
@@ -116,6 +122,7 @@ const filterScammer = computed(() => scammerLists.value.filter((scammer) =>
                     id="inputSearch">
             </div>
         </div>
+        <ScammerLists :scammerLists="filterScammer" @editScammer="editInfo" @deleteScammer="removeScammer"/>
 
         <!-- กรณีที่หาอะไรไม่เจอ -->
         <div v-show="filterScammer == 0" class="mt-10">
@@ -124,29 +131,6 @@ const filterScammer = computed(() => scammerLists.value.filter((scammer) =>
             </div>
             <p class="text-center text-2xl font-black mt-4">ไม่มีข้อมูลที่คุณค้นหาอยู่</p>
         </div>
-        
-        <!-- POPUP -->
-        <!-- <label class="btn btn-ghost normal-case text-xl" @click="showAddedPopup = !showAddedPopup"
-                        for="my-modal">Create</label>
-
-        <input type="checkbox" id="my-modal" class="modal-toggle">
-        <div class="modal">
-            <div class="modal">
-                <div class="modal-box">
-                    <div class="modal-action">
-                        <label for="my-modal" class="btn float-right"
-                            @click="showAddedPopup = !showAddedPopup">X</label>
-                    </div>
-                    <AddPopup v-show="showAddedPopup" @createNewScammer="addNewScammer" />
-                </div>
-            </div>
-        </div> -->
-
-
-
-        <!-- <Search :keywords="keyword" /> -->
-        <ScammerLists :scammerLists="filterScammer" />
-
     </div>
 </template>
 
@@ -173,7 +157,7 @@ form,
     font-family: "Kanit", sans-serif;
 }
 
-addedScammer.card:hover {
+.card:hover {
     background-color: #2c2c2c;
     transition-duration: 300ms;
     transition-timing-function: linear;

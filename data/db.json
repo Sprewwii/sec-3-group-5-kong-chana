@@ -1,16 +1,16 @@
 {
   "scammerLists": [
     {
-      "id": 1,
       "shopName": "AthitiITShop",
       "firstName": "Athiti",
       "lastName": "Kongsobsin",
       "bank": "SCB",
       "bankId": "2392666831",
-      "count": 211,
+      "count": 2012,
       "isActive": false,
       "img": "images/AthitiITShop.jpg",
-      "description": "โดนนายคนนี้โกงค่ะ โอนเงินซื้อมือถือแล้วไม่ส่งของให้ แจ้งความแล้วคดีก็ไม่คืบหน้า ตำรวจบอกว่าไม่สามารถทำอะไรนางได้ มีคนโดนเยอะมากค่ะ #โดนโกงเงิน #ขายไอโฟน #อธิติบางมด"
+      "description": "โดนนายคนนี้โกงค่ะ โอนเงินซื้อมือถือแล้วไม่ส่งของให้ แจ้งความแล้วคดีก็ไม่คืบหน้า ตำรวจบอกว่าไม่สามารถทำอะไรนางได้ มีคนโดนเยอะมากค่ะ #โดนโกงเงิน #ขายไอโฟน #อธิติบางมด",
+      "id": 1
     },
     {
       "id": 2,
@@ -42,14 +42,13 @@
       "firstName": "Udomchai",
       "lastName": "Nirasrop",
       "bank": "Kbank",
-      "bankId": "05136362234",
+      "bankId": "52136362234",
       "count": 5,
       "isActive": false,
       "img": "images/JubbyShabu.jpg",
       "description": "ชาบูร้านนี้บอกจะแถมหม้อต้มชาบู แต่ดันให้เป็นหม้อของเล่นมาครับ หลอกเรื่องนั้นไม่เท่าไหร่ ผมสั่ง set shabu big 5 set ก็เอามาให้แค่ set เดียวแล้วเอาเงินหนีไปไม่รับผิดชอบอะไรเลยครับ"
     },
     {
-      "id": 5,
       "shopName": "FahhCosmetics",
       "firstName": "Hataiwan",
       "lastName": "Mekvee",
@@ -58,29 +57,20 @@
       "count": 99,
       "isActive": false,
       "img": "images/FahhCosmetics.jpg",
-      "description": "เครื่องสำอางปลอม แต่ดันบอกขายของจริง งงมาก ๆ ค่ะ ติดตามข่าวจากทวิตเตอร์ #FahhCosmeticsโกง ได้นะคะ"
-    }
-  ],
-  "users": [
-    {
-      "username": "jamies",
-      "password": "0985769668"
+      "description": "เครื่องสำอางปลอม แต่ดันบอกขายของจริง งงมาก ๆ ค่ะ ติดตามข่าวจากทวิตเตอร์ #FahhCosmeticsโกง ได้นะคะ",
+      "id": 5
     },
     {
-      "username": "jubby",
-      "password": "192544"
-    },
-    {
-      "username": "sarin",
-      "password": "112544"
-    },
-    {
-      "username": "sprewwii",
-      "password": "supichamossy"
-    },
-    {
-      "username": "fahsodsai",
-      "password": "hataiwan888"
+      "shopName": "qweqweqwe123123123123",
+      "firstName": "asdasd123",
+      "lastName": "qweqweqwe2323",
+      "bank": "Kbank",
+      "bankId": 1.2313213123123122e+22,
+      "count": 1,
+      "isActive": true,
+      "img": "images/DefaultShopImage.jpg",
+      "description": "213123123qweqweqwe",
+      "id": 6
     }
   ],
   "aboutUs": [
@@ -102,7 +92,7 @@
       "id": 63130500128,
       "name": "อธิติ คงสบสิน",
       "aka": "7435ヅ",
-      "description": "หนูชื่ออธิติ คงสบสิน ทำหน้าที่เป็นกำลังใจให้เพื่อนๆ โดยจะมีนางสาวสุพิชาเป็นผู้คุมในการทำงานในครั้งนี้",
+      "description": "หนูชื่ออธิติ คงสบสิน ทำหน้าที่เป็นกำลังใจให้เพื่อน ๆ โดยจะมีนางสาวสุพิชาเป็นผู้คุมในการทำงานในครั้งนี้",
       "imgPath": "images/aboutUs/jame.jpeg"
     },
     {
@@ -114,9 +104,9 @@
     },
     {
       "id": 63130500161,
-      "name": "อุดมชัย นิอิราศรพ",
+      "name": "อุดมชัย นิราศรพ",
       "aka": "jubby",
-      "description": "ทำหน้าที่เขียนcodeโดยรวม และ แก้ไขcode เพิ่มfunctionต่างๆ",
+      "description": "ทำหน้าที่เขียนcodeโดยรวม และแก้ไขcode เพิ่มfunctionต่าง ๆ",
       "imgPath": "images/aboutUs/jub.jpeg"
     }
   ]

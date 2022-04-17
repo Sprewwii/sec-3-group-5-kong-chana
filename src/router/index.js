@@ -2,7 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router'
 // import NotFound from '../views/NotFound.vue'
 import Home from '../views/Home.vue'
 import AboutUs from '../views/AboutUs.vue'
-import Login from '../views/Login.vue'
+import AddScammer from '../views/AddScammer.vue'
 
 const history = createWebHistory();
 const routes = [
@@ -17,9 +17,9 @@ const routes = [
         component: AboutUs
     },
     {
-        path: '/login',
-        name: 'Login',
-        component: Login
+        path: '/AddScammer',
+        name: 'AddScammer',
+        component: AddScammer
     }
 ]
 
