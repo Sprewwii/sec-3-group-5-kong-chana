@@ -43,7 +43,7 @@ const password = ref('')
                     <button
                         class="w-full text-white bg-red-400 hover:bg-red-800 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                         type="button" data-modal-toggle="popup-modal"
-                        @click="$emit('doLogin',{username: username, password: password});login = true; username.value = ''; password.value = ''">
+                        @click="$emit('doLogin',{username: username, password: password});username.value = ''; password.value = ''">
                         เข้าสู่ระบบ
                     </button>
                 </div>
