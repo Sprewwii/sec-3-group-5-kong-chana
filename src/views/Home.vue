@@ -1,6 +1,6 @@
 <script setup >
 import { onBeforeMount, ref, computed, reactive } from "vue";
-import ScammerLists from "../components/BaseScammerLists.vue";
+import BaseScammerListsAndEdits from "../components/BaseScammerListsAndEdits.vue";
 import search from "../components/icons/SearchIcon.vue";
 import NotFound from "../components/icons/XIcon.vue";
 import { useRouter } from "vue-router";
@@ -110,7 +110,7 @@ const editInfo = async (scamm) => {
             </div>
         </div>
 
-        <ScammerLists :scammerLists="filterScammer" @editScammer="editInfo" @deleteScammer="removeScammer" />
+        <BaseScammerListsAndEdits :scammerLists="filterScammer" @editScammer="editInfo" @deleteScammer="removeScammer" />
 
         <!-- กรณีที่หาอะไรไม่เจอ -->
         <div v-show="filterScammer == 0" class="mt-10">
