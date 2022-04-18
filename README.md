@@ -33,7 +33,7 @@
 ![Image](/image/Edit1.png)
 ![Image](/image/Edit2.png)
 ![Image](/image/Edit3.png)
-#### Delete เมื่อกดลบจะมี popup เพื่อถามผู้ใช้งานว่าต้องการลบจริง ๆ หริือไม่
+#### Delete เมื่อกดลบจะมี popup เพื่อถามผู้ใช้งานว่าต้องการลบจริง ๆ หรือไม่ หากกด cancle จะไม่ทำการลบข้่อมูล
 ![Image](/image/Delete1.png)
 ![Image](/image/Delete2.png)
 
