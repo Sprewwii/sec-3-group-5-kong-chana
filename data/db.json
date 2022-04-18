@@ -6,26 +6,25 @@
       "lastName": "Kongsobsin",
       "bank": "SCB",
       "bankId": "2392666831",
-      "count": 2012,
+      "count": 2013,
       "isActive": false,
       "img": "images/AthitiITShop.jpg",
       "description": "โดนนายคนนี้โกงค่ะ โอนเงินซื้อมือถือแล้วไม่ส่งของให้ แจ้งความแล้วคดีก็ไม่คืบหน้า ตำรวจบอกว่าไม่สามารถทำอะไรนางได้ มีคนโดนเยอะมากค่ะ #โดนโกงเงิน #ขายไอโฟน #อธิติบางมด",
       "id": 1
     },
     {
-      "id": 2,
-      "shopName": "SprewBakery",
+      "shopName": "SprewBakeryVer2",
       "firstName": "Supicha",
       "lastName": "Piriyasiriphan",
       "bank": "SCB",
       "bankId": "23926645555",
-      "count": 15,
+      "count": 16,
       "isActive": false,
       "img": "images/SprewBakery.jpg",
-      "description": "ร้านขายขนมปังออนไลน์ผ่านทวิตเตอร์ บัญชี @SprewBakery มีประวัติการโกงในด้อมอนิเมะมาก่อนที่จะเข้าวงการขายขนมออนไลน์ เปิดบัญชีได้สองอาทิตย์ ก็มีผู้เสียหายมากกว่า 10 คน"
+      "description": "ร้านขายขนมปังออนไลน์ผ่านทวิตเตอร์ บัญชี @SprewBakery มีประวัติการโกงในด้อมอนิเมะมาก่อนที่จะเข้าวงการขายขนมออนไลน์ เปิดบัญชีได้สองอาทิตย์ ก็มีผู้เสียหายมากกว่า 10 คน",
+      "id": 2
     },
     {
-      "id": 3,
       "shopName": "KhobfhaGameShop",
       "firstName": "Sarin",
       "lastName": "Weerakun",
@@ -34,7 +33,8 @@
       "count": 8,
       "isActive": false,
       "img": "images/KhobfhaGameShop.jpg",
-      "description": "ร้านขายเกมที่บอกว่ารอพรีออเดอร์สินค้า 2 อาทิตย์ แต่รอยัน 2 ปีแล้วยังไม่ได้เลยครับ คดีก็หมดอายุความแล้ว เพราะฉะนั้นผมเลยอยากมาแชร์ประสบการณ์ส่วนตัวที่เจอ เพื่อเตือนภัยทุก ๆ คนครับ"
+      "description": "ร้านขายเกมที่บอกว่ารอพรีออเดอร์สินค้า 2 อาทิตย์ แต่รอยัน 2 ปีแล้วยังไม่ได้เลยครับ คดีก็หมดอายุความแล้ว เพราะฉะนั้นผมเลยอยากมาแชร์ประสบการณ์ส่วนตัวที่เจอ เพื่อเตือนภัยทุก ๆ คนครับ",
+      "id": 3
     },
     {
       "id": 4,
@@ -50,7 +50,7 @@
     },
     {
       "shopName": "FahhCosmetics",
-      "firstName": "Hataiwan",
+      "firstName": "HataiwanSudSexy",
       "lastName": "Mekvee",
       "bank": "SCB",
       "bankId": "10010110009",

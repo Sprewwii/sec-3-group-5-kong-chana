@@ -1,5 +1,4 @@
 import {createRouter, createWebHistory} from 'vue-router'
-// import NotFound from '../views/NotFound.vue'
 import Home from '../views/Home.vue'
 import AboutUs from '../views/AboutUs.vue'
 import AddScammer from '../views/AddScammer.vue'

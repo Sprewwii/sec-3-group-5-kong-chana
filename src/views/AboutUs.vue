@@ -16,7 +16,6 @@ const getAboutUs = async() => {
 onBeforeMount(async () => {
   await getAboutUs()
 })
-
 </script>
 
 <template>

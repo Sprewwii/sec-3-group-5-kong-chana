@@ -1,21 +1,18 @@
 <script setup >
 import { onBeforeMount, ref, computed, reactive } from "vue";
 import ScammerLists from "../components/BaseScammerLists.vue";
-// import AddScammer from "../components/BaseAddScammer.vue";
 import search from "../components/icons/SearchIcon.vue";
-import NotFound from "../components/icons/NotFound.vue";
+import NotFound from "../components/icons/XIcon.vue";
 import { useRouter } from "vue-router";
 
 const appRouter = useRouter()
 const goBack = () => appRouter.go(-1)
 
-// let filterButton = ref(false)
 const scammerLists = ref([]);
 
-const showAddedPopup = ref(false);
 const keyword = ref('');
 
-//GET
+// Fetch API get สำหรับการเรียกใช้ข้อมูลใน db.json ส่วน scammerLists
 const getScammers = async () => {
     const res = await fetch("http://localhost:3001/scammerLists");
     if (res.status === 200) {
@@ -29,6 +26,7 @@ onBeforeMount(async () => {
     await getScammers();
 });
 
+// filter รายชื่อผู้โกง ตาม keyword ข้างใน searchbox
 const filterScammer = computed(() => scammerLists.value.filter((scammer) =>
     scammer.shopName.toLowerCase().includes(keyword.value.toLowerCase())
     || scammer.firstName.toLowerCase().includes(keyword.value.toLowerCase())
@@ -41,6 +39,7 @@ function sortScammers(scammerLists) {
     return scammerLists.sort((a, b) => b.count - a.count);
 }
 
+// Fetch API DELETE สำหรับการลบข้อมูลรายชื่อผู้โกงใน db.json
 const removeScammer = async (deleteScammerId) => {
     const confirmDelete = ref(false)
     confirmDelete.value = confirm(`Do you want to delete this scammer`)
@@ -54,17 +53,7 @@ const removeScammer = async (deleteScammerId) => {
     } else console.log("YOU CANCEL")
 }
 
-function openModal(modalId) {
-    modal = document.getElementById(modalId)
-    modal.classList.remove('hidden')
-}
-
-function closeModal() {
-    modal = document.getElementById('modal')
-    modal.classList.add('hidden')
-}
-
-//Edit
+// Fetch API put สำหรับแก้ไขข้อมูลรายชื่อผู้โกงใน db.json
 const editInfo = async (scamm) => {
     console.log(scamm.id)
     const res = await fetch(`http://localhost:3001/scammerLists/${scamm.id}`, {
@@ -86,26 +75,24 @@ const editInfo = async (scamm) => {
     })
     if (res.status === 200) {
         const editedScammer = await res.json()
-        scammerLists.value = scammerLists.value.map((scammer) => 
-        scammer.id === editedScammer.id ? {
-            ...scammer, 
-            shopName: scamm.shopName,
-            firstName: scamm.firstName,
-            lastName: scamm.lastName,
-            bank: scamm.bank,
-            bankId: scamm.bankId,
-            count: scamm.count,
-            isActive: scamm.isActive,
-            img: scamm.img,
-            description: scamm.description
-            } : scammer    
+        scammerLists.value = scammerLists.value.map((scammer) =>
+            scammer.id === editedScammer.id ? {
+                ...scammer,
+                shopName: scamm.shopName,
+                firstName: scamm.firstName,
+                lastName: scamm.lastName,
+                bank: scamm.bank,
+                bankId: scamm.bankId,
+                count: scamm.count,
+                isActive: scamm.isActive,
+                img: scamm.img,
+                description: scamm.description
+            } : scammer
         )
         console.log("edited successfully")
         alert('Edited succesfully')
     } else console.log("error, can't edit")
 }
-
-
 </script>
 
 <template>
@@ -122,7 +109,8 @@ const editInfo = async (scamm) => {
                     id="inputSearch">
             </div>
         </div>
-        <ScammerLists :scammerLists="filterScammer" @editScammer="editInfo" @deleteScammer="removeScammer"/>
+
+        <ScammerLists :scammerLists="filterScammer" @editScammer="editInfo" @deleteScammer="removeScammer" />
 
         <!-- กรณีที่หาอะไรไม่เจอ -->
         <div v-show="filterScammer == 0" class="mt-10">
@@ -134,37 +122,5 @@ const editInfo = async (scamm) => {
     </div>
 </template>
 
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap");
-
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-}
-
-#logo {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-}
-
-h1,
-p,
-nav,
-#inputSearch,
-form,
-#btnGotScam {
-    font-family: "Kanit", sans-serif;
-}
-
-.card:hover {
-    background-color: #2c2c2c;
-    transition-duration: 300ms;
-    transition-timing-function: linear;
-    color: white;
-}
-
-.card:hover #description {
-    opacity: 1;
-}
+<style scope>
 </style>

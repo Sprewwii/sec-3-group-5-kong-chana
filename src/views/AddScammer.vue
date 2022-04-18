@@ -1,8 +1,6 @@
 <script setup>
-import AddPopup from "../components/BaseAddScammer.vue";
+import AddScammer from "../components/BaseAddScammer.vue";
 import router from "../router";
-// import { useRoute } from 'vue-router'
-// let { params } = useRoute()
 
 // Fetch API POST สำหรับการเพิ่มข้อมูลผู้โกง
 const addNewScammer = async (newScammer) => {
@@ -21,9 +19,8 @@ const addNewScammer = async (newScammer) => {
  
 <template>
     <div>
-        <!-- <p>{{this.$router.params.id}}</p> -->
-        <AddPopup @createNewScammer="addNewScammer" />
+        <AddScammer @createNewScammer="addNewScammer" />
     </div>
 </template>
  
-<style></style>
+<style scope></style>
