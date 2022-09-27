@@ -22,8 +22,8 @@ defineProps({
                 <img class="mb-3 w-32 h-32 rounded-full shadow-lg mx-auto" :src="team.imgPath">
                 <div
                     class=" flex items-center justify-center justify-between pb-5 pl-13 pr-13 flex items-center justify-center justify-between">
-                    <img src="images/instagram.png" class="w-10 h-10 hover:opacity-60 duration-300">
-                    <img src="images/facebook.png" class="w-10 h-10 hover:opacity-60 duration-300">
+                    <img src="../instagram.png" class="w-10 h-10 hover:opacity-60 duration-300">
+                    <img src="../facebook.png" class="w-10 h-10 hover:opacity-60 duration-300">
                 </div>
                 <h2 class="text-lg text-gray-700"> {{ team.name }} </h2>
                 <h2 class="text-lg text-gray-700"> ({{ team.id }}) </h2>

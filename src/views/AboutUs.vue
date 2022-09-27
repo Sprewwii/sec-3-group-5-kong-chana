@@ -1,21 +1,11 @@
 <script setup>
-import { ref, onBeforeMount } from 'vue'
+import { computed } from 'vue'
 import AboutUs from '../components/BaseAboutUs.vue';
+import {userManager} from "../script/userManager.js"
 
-const teams = ref([])
+const teams = computed(userManager.getAboutUs)
 
-// Fetch API get สำหรับการเรียกใช้ข้อมูลใน db.json ส่วน aboutUs
-const getAboutUs = async() => {
-  const res = await fetch("http://localhost:3001/aboutUs")
-  if(res.status === 200){
-    teams.value = await res.json()
-    console.log(teams.value)
-  } else console.log("can't get data")
-}
 
-onBeforeMount(async () => {
-  await getAboutUs()
-})
 </script>
 
 <template>
